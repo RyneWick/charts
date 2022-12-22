@@ -56,3 +56,5 @@ website/
 pub/
 tgz_cache/
 index_cache/
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
