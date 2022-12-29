@@ -1,0 +1,42 @@
+image:
+  repository: tccr.io/truecharts/soulseek
+  pullPolicy: IfNotPresent
+  tag: latest@sha256:09d6d06c06a5ba9225b14a967d241cfb23b63a5177297b8e055e0c002e7764df
+
+securityContext:
+  readOnlyRootFilesystem: false
+
+service:
+  main:
+    ports:
+      main:
+        protocol: HTTP
+        targetPort: 6080
+        port: 11502
+
+probes:
+  liveness:
+    path: "/"
+
+  readiness:
+    path: "/"
+
+  startup:
+    path: "/"
+
+persistence:
+  config:
+    enabled: true
+    mountPath: "/data/.SoulseekQt"
+  logs:
+    enabled: true
+    mountPath: "/data/Soulseek Chat Logs"
+  downloads:
+    enabled: true
+    mountPath: ""
+  shared:
+    enabled: true
+    mountPath: ""
+
+portal:
+  enabled: true
