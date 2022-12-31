@@ -1,7 +1,7 @@
 image:
   repository: tccr.io/truecharts/pingvin-share
   pullPolicy: IfNotPresent
-  tag: 0.3.6@sha256:ac586a491b46488d09a82d2a6f4b9f9e7997d08750b76f062af0f4d4a5730a5a
+  tag: 0.5.0@sha256:05408d77036c75aeb66a19d539eafc28940685edf8c7a5b380d178810f002c00
 
 securityContext:
   readOnlyRootFilesystem: false

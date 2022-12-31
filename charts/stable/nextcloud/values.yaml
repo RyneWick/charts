@@ -1,12 +1,12 @@
 image:
   repository: tccr.io/truecharts/nextcloud-fpm
   pullPolicy: IfNotPresent
-  tag: 25.0.2@sha256:2d1f5a45360a597fcc633ab361cc089f64354143e38a8b7a772801bbafd6d550
+  tag: 25.0.2@sha256:59e6d2be5139cdeb030a095fb92b97e01d7d53071dc34b487956065a385d3a32
 
 nginxImage:
   repository: tccr.io/truecharts/nginx-unprivileged
   pullPolicy: IfNotPresent
-  tag: 1.23.3@sha256:5fdbe56c5679654fd17a943430ec92df0247839c42d2aa4d7727040ad5c7162f
+  tag: 1.23.3@sha256:1a46c4845514d3f32debb53346f747f6a3be42ce5ae35138a8a99a88b075a1e9
 
 imaginaryImage:
   repository: h2non/imaginary
@@ -93,19 +93,18 @@ probes:
 
 initContainers:
   prestart:
-    image: "{{ .Values.ubuntuImage.repository }}:{{ .Values.ubuntuImage.tag }}"
+    image: "{{ .Values.alpineImage.repository }}:{{ .Values.alpineImage.tag }}"
     securityContext:
       runAsUser: 0
       runAsGroup: 0
-      privileged: true
     command:
       - "/bin/sh"
       - "-c"
       - |
-        /bin/bash <<'EOF'
+        /bin/sh <<'EOF'
         echo "Forcing permissions on userdata folder..."
         echo "Trying to override ownship using nfs4xdr_winacl..."
-        /usr/bin/nfs4xdr_winacl -a chown -G 33 -r -c '/var/www/html/data' -p '/var/www/html/data' || echo "Failed setting ownership..."
+        /usr/bin/nfs4xdr_winacl -a chown -G 33 -c '/var/www/html/data' -p '/var/www/html/data' || echo "Failed setting ownership..."
         chmod 770 /var/www/html/data || echo "Failed to chmod..."
         EOF
 

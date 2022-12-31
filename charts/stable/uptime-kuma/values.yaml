@@ -1,7 +1,7 @@
 image:
   repository: tccr.io/truecharts/uptime-kuma
   pullPolicy: IfNotPresent
-  tag: 1.18.5@sha256:91e6463b4bf4041a54f90f8ebe4095cd834e43f4f098c29b094b8dcc7ad12470
+  tag: 1.19.2@sha256:f66869f866f401cceb8a4b57af40a7543175627c32ec5dd83266a4f161a0297f
 
 securityContext:
   runAsNonRoot: false

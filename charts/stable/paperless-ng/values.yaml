@@ -1,7 +1,7 @@
 image:
   repository: tccr.io/truecharts/paperless-ng
   pullPolicy: IfNotPresent
-  tag: 1.10.2@sha256:99d813eeca12ef2213fa0f278b750ac633fe3eaeafd06778280052ca33de5c6f
+  tag: 1.11.1@sha256:8a3400329ed668ed9643bdee6a6730331d1e998cd7e23ecb2a7a8ce392f4472f
 
 securityContext:
   runAsNonRoot: false
