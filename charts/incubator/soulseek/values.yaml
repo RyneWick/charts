@@ -33,10 +33,10 @@ persistence:
     mountPath: "/data/Soulseek Chat Logs"
   downloads:
     enabled: true
-    mountPath: ""
+    mountPath: "/data/Soulseek Downloads"
   shared:
     enabled: true
-    mountPath: ""
+    mountPath: "/data/Soulseek Shared Folder"
 
 portal:
   enabled: true
